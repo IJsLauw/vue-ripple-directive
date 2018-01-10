@@ -31,7 +31,9 @@ var Ripple = {
   }
 };
 
-function rippler(event, el, isUpdate = false) {
+function rippler(event, el, isUpdate) {
+  isUpdate = typeof isUpdate  === 'undefined' ? false : isUpdate;
+
   var target = el;
   // Get border to avoid offsetting on ripple container position
   var targetBorder = parseInt((getComputedStyle(target).borderWidth).replace('px', ''));
